@@ -4,12 +4,13 @@ const logger = require('./middleWare');
 const http = require('http');
 
 const app = express();
-app.get('/', (request, res) => {
-    // res.send('help me pit')
-    res.sendFile(path.join(__dirname, 'page', 'home.html'))
-})
+// app.get('/', (request, res) => {
+//     // res.send('help me pit')
+//     res.sendFile(path.join(__dirname, 'page', 'home.html'))
+// })
 
-// app.use(express.static(path.join(__dirname, 'page')));
+app.use(express.static(path.join(__dirname, 'page')));
+
 app.use(express.json());
 app.use(express.urlencoded({extended : false}));
 
